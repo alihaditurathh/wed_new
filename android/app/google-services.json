@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "595935708915",
+    "project_id": "wedweddings-bba88",
+    "storage_bucket": "wedweddings-bba88.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595935708915:android:96260646d70a78d13a5986",
+        "android_client_info": {
+          "package_name": "com.example.wed_for_weddings"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzim_OqwzhTrlVtV7TfLp6fFtDQcgQYTg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
