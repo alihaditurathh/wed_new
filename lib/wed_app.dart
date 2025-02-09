@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wed_for_weddings/core/app/connectivity_controller.dart';
 import 'package:wed_for_weddings/core/app/env.variables.dart';
 import 'package:wed_for_weddings/core/common/screens/no_network_screen.dart';
@@ -12,24 +13,28 @@ class Wed extends StatelessWidget {
     valueListenable: ConnectivityController.instance.isConnected,
         builder: (_, value, __) {
           if (value) {
-            return MaterialApp(
-              title: 'Wed',
-              debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
-              theme: ThemeData.light(useMaterial3: true),
-              builder: (context, Widget) {
-                return Scaffold(
-                  body: Builder(
-                    builder: (context){
-                      ConnectivityController.instance.init();
-                      return Widget!;
-                    }),
-                );
-              },
-              home: Scaffold(
-                appBar: AppBar(
-                  backgroundColor: Colors.pink,
-                  title: const Text('Wed'),
-                  centerTitle: true,
+            return ScreenUtilInit(
+              designSize: const Size(375, 812),
+              minTextAdapt: true,
+              child: MaterialApp(
+                title: 'Wed',
+                debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
+                theme: ThemeData.light(useMaterial3: true),
+                builder: (context, Widget) {
+                  return Scaffold(
+                    body: Builder(
+                      builder: (context){
+                        ConnectivityController.instance.init();
+                        return Widget!;
+                      }),
+                  );
+                },
+                home: Scaffold(
+                  appBar: AppBar(
+                    backgroundColor: Colors.pink,
+                    title: const Text('Wed'),
+                    centerTitle: true,
+                  ),
                 ),
               ),
             );
