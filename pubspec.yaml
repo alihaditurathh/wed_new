@@ -76,6 +76,8 @@ flutter:
     - .env.dev
     - .env.prod
     - assets/images/core/
+    - assets/images/admin/
+    - assets/images/customer/
 
   fonts:
     # Arabic Font

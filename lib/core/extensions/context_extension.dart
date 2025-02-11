@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:wed_for_weddings/core/style/theme/assets_extension.dart';
+import 'package:wed_for_weddings/core/style/theme/color_extension.dart';
 //TODO:لتنقل بين الصفحات
 extension ContextExt on BuildContext {
   //color
+  MyColors get color => Theme.of(this).extension<MyColors>()!;
 
+  // images
+  MyAssets get assets => Theme.of(this).extension<MyAssets>()!;
 
+  // style
+  TextStyle get textStyle => Theme.of(this).textTheme.displaySmall!;
+
+//Language
+//  String translate(String langkey) {
+   // return AppLocalizations.of(this)!.translate(langkey).toString();
+ // }
   //Navigation
 
   Future<dynamic> pushName(String routeName, {Object? arguments}) {
