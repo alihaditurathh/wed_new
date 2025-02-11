@@ -6,7 +6,6 @@ class TestTowScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink,
       appBar: AppBar(title: Text("two"),),
     );
   }
