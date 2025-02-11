@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:wed_for_weddings/core/images/app_images.dart';
+import 'package:wed_for_weddings/core/style/images/app_images.dart';
 
 class NoNetWorkScreen extends StatelessWidget {
   const NoNetWorkScreen({super.key});
