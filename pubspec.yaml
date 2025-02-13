@@ -79,6 +79,7 @@ flutter:
     - assets/images/core/
     - assets/images/admin/
     - assets/images/customer/
+    - assets/svg/
 
   fonts:
     # Arabic Font
