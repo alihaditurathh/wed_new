@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wed_for_weddings/core/app/connectivity_controller.dart';
 import 'package:wed_for_weddings/core/app/env.variables.dart';
 import 'package:wed_for_weddings/core/common/screens/no_network_screen.dart';
+import 'package:wed_for_weddings/core/language/app_localizations_setup.dart';
 import 'package:wed_for_weddings/core/routes/app_routes.dart';
 import 'package:wed_for_weddings/core/style/theme/app_theme.dart';
 
@@ -18,13 +19,24 @@ class Wed extends StatelessWidget {
               title: 'Wed',
               debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
               theme: themeDark(),
+            locale: Locale('en'),
+                    supportedLocales: AppLocalizationsSetup.supportedLocales,
+                    localizationsDelegates:
+                        AppLocalizationsSetup.localizationsDelegates,
+                    localeResolutionCallback:
+                        AppLocalizationsSetup.localeResolutionCallback,
               builder: (context, Widget) {
-                return Scaffold(
-                  body: Builder(
-                    builder: (context){
-                      ConnectivityController.instance.init();
-                      return Widget!;
-                    }),
+                return GestureDetector(
+                  onTap: (){
+                    FocusManager.instance.primaryFocus?.unfocus();
+                  },
+                  child: Scaffold(
+                    body: Builder(
+                      builder: (context){
+                        ConnectivityController.instance.init();
+                        return Widget!;
+                      },),
+                  ),
                 );
               },
               onGenerateRoute: AppRoutes.onGenerateRoute,
