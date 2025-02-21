@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+import 'package:wed_for_weddings/core/extensions/context_extension.dart';
+import 'package:wed_for_weddings/features/auth/presentation/refactors/auth_custom_painter.dart';
+import 'package:wed_for_weddings/features/auth/presentation/refactors/sign_up_body.dart';
+
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        bottomNavigationBar: CustomPaint(
+        size: Size(
+          MediaQuery.of(context).size.width,
+          150,
+        ),
+        painter: AuthCustomPainter(
+          gradient: LinearGradient(
+            colors: [
+              context.color.bluePinkLight!,
+              context.color.bluePinkLight!,
+              context.color.bluePinkLight!,
+              context.color.bluePinkDark!,
+            ],
+          ),
+        ),
+      ),
+      body:const SafeArea(
+        bottom: false,
+        child: SignUpBody(),),
+    );
+  }
+}
