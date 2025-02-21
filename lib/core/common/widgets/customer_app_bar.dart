@@ -5,7 +5,6 @@ import 'package:wed_for_weddings/core/common/widgets/custom_linear_button.dart';
 import 'package:wed_for_weddings/core/common/widgets/text_app.dart';
 import 'package:wed_for_weddings/core/extensions/context_extension.dart';
 import 'package:wed_for_weddings/core/style/fonts/font_weight_helper.dart';
-import 'package:wed_for_weddings/core/style/images/app_images.dart';
 
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -53,5 +52,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size(double.infinity, 70.h);
+  Size get preferredSize => const Size(double.infinity, 70);
 }

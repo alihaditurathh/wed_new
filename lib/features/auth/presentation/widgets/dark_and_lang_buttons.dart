@@ -19,7 +19,7 @@ class DarkAndLangButtons extends StatelessWidget {
           child: CustomLinearButton(
             onPressed: (){},
              child:const Icon(Icons.light_mode_rounded,
-             color: Colors.white,)),
+             color: Colors.white,),),
         ),
         //language button
         CustomFadeInLeft(

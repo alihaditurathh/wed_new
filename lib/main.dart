@@ -18,7 +18,7 @@ import 'package:wed_for_weddings/wed_app.dart';
   messagingSenderId:'595935708915',
   projectId:'wedweddings-bba88',
  )
-):  await Firebase.initializeApp();
+ ,):  await Firebase.initializeApp();
 //لايقاف تدوير الشاشة
   await SystemChrome.setPreferredOrientations(
     [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp],
