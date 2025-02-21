@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wed_for_weddings/core/extensions/context_extension.dart';
 
 class CustomLinearButton extends StatelessWidget {
@@ -22,8 +21,8 @@ class CustomLinearButton extends StatelessWidget {
       splashColor: context.color.bluePinkLight!.withOpacity(0.3),
       onTap: onPressed,
       child: Container(
-        height: height ?? 44.h,
-        width: width ?? 44.w,
+        height: height ?? 44,
+        width: width ?? 44,
         decoration: ShapeDecoration(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),

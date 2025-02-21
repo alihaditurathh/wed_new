@@ -45,7 +45,7 @@ class CustomTextField extends StatelessWidget {
       controller: controller,
       cursorColor: context.color.textColor,
       style: TextStyle(
-        fontSize: 16.sp,
+        fontSize: 16,
         fontWeight: FontWeight.w500,
         color: context.color.textColor,
       ),
@@ -88,12 +88,12 @@ class CustomTextField extends StatelessWidget {
             context.textStyle.copyWith(
               color: context.color.textColor,
               fontWeight: FontWeight.w400,
-              fontSize: 14.sp,
+              fontSize: 14,
             ),
         errorStyle: context.textStyle.copyWith(
           color: Colors.red,
           fontWeight: FontWeight.w400,
-          fontSize: 12.sp,
+          fontSize: 12,
         ),
       ),
     );

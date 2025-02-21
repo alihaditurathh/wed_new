@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 
 import 'package:flutter/material.dart';
-import 'package:wed_for_weddings/core/service/shared_pref/pref_keys.dart';
 
 class CustomFadeInDown extends StatelessWidget {
   const CustomFadeInDown({
