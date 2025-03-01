@@ -4,7 +4,11 @@ import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wed_for_weddings/core/app/bloc_observer.dart';
 import 'package:wed_for_weddings/core/app/env.variables.dart';
+import 'package:wed_for_weddings/core/di/injection_container.dart';
+import 'package:wed_for_weddings/core/service/shared_pref/shared_pref.dart';
 import 'package:wed_for_weddings/wed_app.dart';
 
  Future<void> main() async {
@@ -19,6 +23,9 @@ import 'package:wed_for_weddings/wed_app.dart';
   projectId:'wedweddings-bba88',
  )
  ,):  await Firebase.initializeApp();
+ await SharedPref().instantiatePreferences();
+ await setupInjector();
+ Bloc.observer=AppBlocObserver();
 //لايقاف تدوير الشاشة
   await SystemChrome.setPreferredOrientations(
     [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp],
