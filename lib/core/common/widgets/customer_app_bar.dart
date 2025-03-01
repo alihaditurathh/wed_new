@@ -30,7 +30,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             onPressed: () {
               context.pop();
             },
-            child: Center(
+            child: const Center(
           //    child: SvgPicture.asset(AppImages.backButton),
             ),
           ),
