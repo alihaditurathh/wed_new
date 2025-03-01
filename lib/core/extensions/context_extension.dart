@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wed_for_weddings/core/language/app_localizations.dart';
 import 'package:wed_for_weddings/core/style/theme/assets_extension.dart';
 import 'package:wed_for_weddings/core/style/theme/color_extension.dart';
+
 //TODO:لتنقل بين الصفحات
 extension ContextExt on BuildContext {
   //color
@@ -29,7 +30,7 @@ extension ContextExt on BuildContext {
   }
 
   Future<dynamic> pushNamedAndRemoveUntil(String routeName,
-      {Object? arguments}) {
+      {Object? arguments,}) {
     return Navigator.of(this)
         .pushNamedAndRemoveUntil(routeName, (route) => false);
   }
