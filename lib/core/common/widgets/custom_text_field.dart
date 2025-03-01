@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wed_for_weddings/core/extensions/context_extension.dart';
 
 class CustomTextField extends StatelessWidget {
