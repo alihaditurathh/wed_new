@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:wed_for_weddings/core/service/shared_pref/pref_keys.dart';
 import 'package:wed_for_weddings/core/service/shared_pref/shared_pref.dart';
+import 'package:wed_for_weddings/core/utils/app_logout.dart';
 
 class DioFactory {
   DioFactory._();
@@ -47,7 +48,7 @@ class DioFactory {
         },
         onError: (error, handler) async {
           if (error.response?.statusCode == 401) {
-          //  await AppLogout().logout();
+           await AppLogout().logout();
           }
         },
       ),
