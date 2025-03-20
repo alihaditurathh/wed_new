@@ -15,7 +15,6 @@ UserRoleResponse _$UserRoleResponseFromJson(Map<String, dynamic> json) =>
       json['avatar'] as String?,
     );
 
-// ignore: unused_element
 Map<String, dynamic> _$UserRoleResponseToJson(UserRoleResponse instance) =>
     <String, dynamic>{
       'role': instance.userRole,
