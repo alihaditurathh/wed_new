@@ -1,5 +1,5 @@
 
-//TODO سويج بين لغة العربية والانكليزية
+// سويج بين لغة العربية والانكليزية
 import 'package:wed_for_weddings/core/service/shared_pref/pref_keys.dart';
 import 'package:wed_for_weddings/core/service/shared_pref/shared_pref.dart';
 

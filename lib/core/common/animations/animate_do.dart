@@ -59,7 +59,7 @@ class CustomFadeInLeft extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //TODO:لاجعل الصفحة تظهر من اليسار
+    //:لاجعل الصفحة تظهر من اليسار
 
     return SharedPref().getString(PrefKeys.language) == 'ar'
         ? FadeInLeft(
@@ -88,7 +88,7 @@ class CustomFadeInRight extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //TODO:لا��عل الصفحة ت��هر من اليمين
+    //:لا��عل الصفحة ت��هر من اليمين
 
     return SharedPref().getString(PrefKeys.language) == 'ar'
         ? FadeInRight(
