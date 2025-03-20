@@ -26,7 +26,7 @@ class UploadImageCubit extends Cubit<UploadImageState> {
 
     result.when(
       success: (image) {
-       // getImageUrl = image.location ?? '';
+        getImageUrl = image.location ?? '';
         emit(const UploadImageState.success());
       },
       failure: (error) {
