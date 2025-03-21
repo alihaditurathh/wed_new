@@ -30,6 +30,8 @@ class AppRoutes {
           providers: [
             BlocProvider(create: (context) => sl<UploadImageCubit>()
             ),
+              BlocProvider(create: (context) => sl<AuthBloc>()
+            ),
           ],
           child: const SignUpScreen(),),);
               case homeAdmin:

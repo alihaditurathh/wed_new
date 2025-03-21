@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wed_for_weddings/core/app/upload_image/cubit/upload_image_cubit.dart';
 import 'package:wed_for_weddings/core/common/animations/animate_do.dart';
 import 'package:wed_for_weddings/core/common/toast/show_toast.dart';
@@ -35,7 +34,7 @@ class SignUpButton extends StatelessWidget {
           loading: () {
             return CustomLinearButton(
               onPressed: () {},
-              height: 50.h,
+              height: 50,
               width: MediaQuery.of(context).size.width,
               child: const CircularProgressIndicator(
                 color: Colors.white,
@@ -49,12 +48,12 @@ class SignUpButton extends StatelessWidget {
                 onPressed: () {
                   _validateThenDoSignUp(context);
                 },
-                height: 50.h,
+                height: 50,
                 width: MediaQuery.of(context).size.width,
                 child: TextApp(
                   text: context.translate(LangKeys.signUp),
                   theme: context.textStyle.copyWith(
-                    fontSize: 18.sp,
+                    fontSize: 18,
                     fontWeight: FontWeightHelper.bold,
                   ),
                 ),
