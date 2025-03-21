@@ -24,6 +24,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController nameController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
 
   final formKey = GlobalKey<FormState>();
 
@@ -69,6 +70,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         password: passwordController.text,
         avatar: event.imagUrl,
         name: nameController.text.trim(),
+        phone: phoneController.text.trim(),
       ),
     );
 

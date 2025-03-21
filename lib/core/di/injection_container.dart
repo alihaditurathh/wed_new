@@ -1,5 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:wed_for_weddings/core/app/app_cubit/app_cubit.dart';
+import 'package:wed_for_weddings/core/app/upload_image/cubit/upload_image_cubit.dart';
+import 'package:wed_for_weddings/core/app/upload_image/data_source/upload_image_data_source.dart';
+import 'package:wed_for_weddings/core/app/upload_image/repo/upload_image_repo.dart';
 import 'package:wed_for_weddings/core/service/graphql/api_service.dart';
 import 'package:wed_for_weddings/core/service/graphql/dio_factory.dart';
 import 'package:wed_for_weddings/features/auth/data/data_source/auth_data_source.dart';
@@ -14,9 +18,15 @@ Future<void> setupInjector()async{
 
 Future<void> _initCore() async{ 
   final dio = DioFactory.getDio();
+    final navigatorKey = GlobalKey<NavigatorState>();
   sl
   ..registerFactory(AppCubit.new)
-  ..registerLazySingleton<ApiService>(() => ApiService(dio));}
+  ..registerLazySingleton<ApiService>(() => ApiService(dio))
+   ..registerSingleton<GlobalKey<NavigatorState>>(navigatorKey)
+   ..registerFactory(()=> UploadImageCubit(sl()))
+    ..registerLazySingleton(()=> UploadImageRepo(sl()))
+     ..registerFactory(()=> UploadImageDataSource(sl()));
+   }
 
 Future<void> _initAuth() async{ 
  sl

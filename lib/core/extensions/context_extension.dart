@@ -3,7 +3,7 @@ import 'package:wed_for_weddings/core/language/app_localizations.dart';
 import 'package:wed_for_weddings/core/style/theme/assets_extension.dart';
 import 'package:wed_for_weddings/core/style/theme/color_extension.dart';
 
-//TODO:لتنقل بين الصفحات
+//:لتنقل بين الصفحات
 extension ContextExt on BuildContext {
   //color
   MyColors get color => Theme.of(this).extension<MyColors>()!;

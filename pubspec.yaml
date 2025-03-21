@@ -53,6 +53,8 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   fluttertoast: ^8.2.12
   json_serializable: ^6.9.0
+  image_picker: ^1.0.7
+  permission_handler: ^11.2.0
   # dart run build_runner build --delete-conflicting-outputs
 
 flutter_icons:

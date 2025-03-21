@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wed_for_weddings/core/app/upload_image/cubit/upload_image_cubit.dart';
 import 'package:wed_for_weddings/core/common/screens/under_build_screen.dart';
 import 'package:wed_for_weddings/core/di/injection_container.dart';
 import 'package:wed_for_weddings/core/routes/base_routes.dart';
@@ -25,7 +26,14 @@ class AppRoutes {
         ),
         );
       case signUp:
-        return BaseRoute(page: const SignUpScreen());
+        return BaseRoute(page: MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => sl<UploadImageCubit>()
+            ),
+              BlocProvider(create: (context) => sl<AuthBloc>()
+            ),
+          ],
+          child: const SignUpScreen(),),);
               case homeAdmin:
         return BaseRoute(page: const HomeAdminScreen());
               case homeCustomer:
