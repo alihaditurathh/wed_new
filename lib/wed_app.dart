@@ -38,7 +38,7 @@ class Wed extends StatelessWidget {
                   final Cubit = context.read<AppCubit>();
                   return MaterialApp(
                     title: 'Wed',
-                    debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
+                    debugShowCheckedModeBanner: false,
                     theme: Cubit.isDark ? themeLight() : themeDark(),
                     locale: Locale(Cubit.currentLangCode),
                     supportedLocales: AppLocalizationsSetup.supportedLocales,
