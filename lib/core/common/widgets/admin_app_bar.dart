@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:wed_for_weddings/core/common/widgets/text_app.dart';
 import 'package:wed_for_weddings/core/extensions/context_extension.dart';
 import 'package:wed_for_weddings/core/style/fonts/font_family_helper.dart';
@@ -28,7 +28,7 @@ class AdminAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: TextApp(
         text: title,
         theme: context.textStyle.copyWith(
-          fontSize: 18.sp,
+          fontSize: 18,
           fontFamily: FontFamilyHelper.poppinsEnglish,
           fontWeight: FontWeightHelper.bold,
           color: Colors.white,
@@ -37,7 +37,7 @@ class AdminAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: isMain
           ? IconButton(
               onPressed: () {
-              //  ZoomDrawer.of(context)!.toggle();
+                ZoomDrawer.of(context)!.toggle();
               },
               icon: const Icon(
                 Icons.menu,
@@ -49,5 +49,5 @@ class AdminAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size(double.infinity, 50.h);
+  Size get preferredSize => Size(double.infinity, 50);
 }
