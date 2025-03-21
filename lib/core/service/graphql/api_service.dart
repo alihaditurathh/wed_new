@@ -7,7 +7,6 @@ import 'package:wed_for_weddings/features/auth/data/models/sign_up_response.dart
 import 'package:wed_for_weddings/features/auth/data/models/user_role_response.dart';
 
 part 'api_service.g.dart';
-
 const String baseUrl = 'https://api.escuelajs.co';
 const String graphql = '/graphql';
 

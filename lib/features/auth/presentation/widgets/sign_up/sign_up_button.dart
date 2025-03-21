@@ -22,7 +22,7 @@ class SignUpButton extends StatelessWidget {
           ShowToast.showToastSuccessTop(
             message: context.translate(LangKeys.loggedSuccessfully),
           );
-          context.pushNamedAndRemoveUntil(AppRoutes.homeAdmin);
+          context.pushNamedAndRemoveUntil(AppRoutes.homeCustomer);
         }, error: (message) {
           ShowToast.showToastErrorTop(
             message: context.translate(message),
