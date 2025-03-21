@@ -19,6 +19,8 @@ class LangKeys {
   static const String validPickImage = 'valid_pick_image';
   static const String imageUploaded = 'image_uploaded';
   static const String imageRemoved = 'image_removed';
+  static const String Products = 'Products';
+  static const String Users = 'Users';
   static const String chooseProducts = 'Choose what suits you';
   static const String applicationFeatures = 'application_features';
   static const String languageTilte = 'language_tilte';
@@ -33,8 +35,10 @@ class LangKeys {
   static const String no = 'no';
   static const String darkMode = 'dark_mode';
   static const String langCode = 'lang_code';
-   static const String phone = 'phone_number';
+  static const String phone = 'phone_number';
+  static const String DashBoard = 'DashBoard';
   static const String notifications = 'notifications';
+  static const String Categories = 'Categories';
   static const String subscribedToNotifications = 'subscribed_to_notifications';
   static const String unsubscribedToNotifications =
       'unsubscribed_to_notifications';
