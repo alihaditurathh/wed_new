@@ -11,7 +11,6 @@ import 'package:wed_for_weddings/features/admin/dashboard/presentation/bloc/cate
 import 'package:wed_for_weddings/features/admin/dashboard/presentation/bloc/products_number/products_number_bloc.dart';
 import 'package:wed_for_weddings/features/admin/dashboard/presentation/bloc/users_number/users_number_bloc.dart';
 import 'package:wed_for_weddings/features/admin/dashboard/presentation/widgets/dashboard_container.dart';
-import 'package:wed_for_weddings/features/auth/presentation/widgets/dark_and_lang_buttons.dart';
 
 class DashboardBody extends StatelessWidget {
   const DashboardBody({super.key});
@@ -22,49 +21,117 @@ class DashboardBody extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.h),
       child: RefreshIndicator(
           onRefresh: () async {
-       //    context
-         //               .read<ProductsNumberBloc>()
-           //         .add(const ProductsNumberEvent.getProductsNumber());
-             //   context
-               //   .read<CategoriesNumberBloc>()
-             //   .add(const CategoriesNumberEvent.getCategoriesNumber());
-               //    context
-                 //    .read<UsersNumberBloc>()
-                   //.add(const UsersNumberEvent.getUsersNumber());
+           context
+                        .read<ProductsNumberBloc>()
+                    .add(const ProductsNumberEvent.getProductsNumber());
+                context
+                  .read<CategoriesNumberBloc>()
+                .add(const CategoriesNumberEvent.getCategoriesNumber());
+                   context
+                     .read<UsersNumberBloc>()
+                   .add(const UsersNumberEvent.getUsersNumber());
           },
           child: ListView(
             children: [
-         //     const DarkAndLangButtons(),
-            //  SizedBox(height: 20.h,),
-              //Products
-             CustomFadeInRight(
-              duration: 600,
-               child: DashBoardContiner(
-                title: context.translate(LangKeys.Products,),
-                 number: '0',
-                  image: AppImages.productsDrawer,
-                   isLoading: false),
-             ),
-                 SizedBox(height: 20.h,),
-                    //Cateories
-             CustomFadeInLeft(
-              duration: 600,
-               child: DashBoardContiner(
-                title: context.translate(LangKeys.Categories),
-                 number: '0',
-                  image: AppImages.categoriesDrawer,
-                   isLoading: false),
-             ),
-                 SizedBox(height: 20.h,),
-                    //Users
-             CustomFadeInRight(
-              duration: 600,
-               child: DashBoardContiner(
-                title: context.translate(LangKeys.Users),
-                 number: '0',
-                  image: AppImages.usersDrawer,
-                   isLoading: false),
-             ),
+       //Products
+            BlocBuilder<ProductsNumberBloc, ProductsNumberState>(
+              
+              builder: (context, state) {
+                return state.when(
+                  loading: () {
+                    return  DashBoardContiner(
+                      image: AppImages.productsDrawer,
+                      number: '',
+                      title: context.translate(LangKeys.Products),
+                      isLoading: true,
+                    );
+                  },
+                  success: (productNumber) {
+                    return DashBoardContiner(
+                      image: AppImages.productsDrawer,
+                      number: productNumber,
+                      title: context.translate(LangKeys.Products),
+                      isLoading: false,
+                    );
+                  },
+                  error: (errorMessage) {
+                    return TextApp(
+                      text: errorMessage,
+                      theme: context.textStyle.copyWith(
+                        color: Colors.red,
+                        fontSize: 16.sp,
+                      ),
+                    );
+                  },
+                );
+              },
+            ),
+            SizedBox(height: 20.h),
+            //Categories
+            BlocBuilder<CategoriesNumberBloc, CategoriesNumberState>(
+              builder: (context, state) {
+                return state.when(
+                  loading: () {
+                    return  DashBoardContiner(
+                      image: AppImages.productsDrawer,
+                      number: '',
+                      title: context.translate(LangKeys.Categories),
+                      isLoading: true,
+                    );
+                  },
+                  success: (categoryNumber) {
+                    return DashBoardContiner(
+                      image: AppImages.categoriesDrawer,
+                      number: categoryNumber,
+                      title: context.translate(LangKeys.Categories),
+                      isLoading: false,
+                    );
+                  },
+                  error: (errorMessage) {
+                    return TextApp(
+                      text: errorMessage,
+                      theme: context.textStyle.copyWith(
+                        color: Colors.red,
+                        fontSize: 16.sp,
+                      ),
+                    );
+                  },
+                );
+              },
+            ),
+            SizedBox(height: 20.h),
+            //Users
+            BlocBuilder<UsersNumberBloc, UsersNumberState>(
+              builder: (context, state) {
+                return state.when(
+                  loading: () {
+                    return  DashBoardContiner(
+                      image: AppImages.productsDrawer,
+                      number: '',
+                      title: context.translate(LangKeys.Users),
+                      isLoading: true,
+                    );
+                  },
+                  success: (categoryNumber) {
+                    return DashBoardContiner(
+                      image: AppImages.usersDrawer,
+                      number: categoryNumber,
+                      title: context.translate(LangKeys.Users),
+                      isLoading: false,
+                    );
+                  },
+                  error: (errorMessage) {
+                    return TextApp(
+                      text: errorMessage,
+                      theme: context.textStyle.copyWith(
+                        color: Colors.red,
+                        fontSize: 16.sp,
+                      ),
+                    );
+                  },
+                );
+              },
+            ),
             ],
           )
           ),
