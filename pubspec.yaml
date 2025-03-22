@@ -55,6 +55,7 @@ dependencies:
   json_serializable: ^6.9.0
   image_picker: ^1.0.7
   permission_handler: ^11.2.0
+  shimmer: ^3.0.0
   flutter_zoom_drawer: ^3.2.0
   # dart run build_runner build --delete-conflicting-outputs
 
