@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wed_for_weddings/core/common/animations/animate_do.dart';
 import 'package:wed_for_weddings/core/common/widgets/text_app.dart';
 import 'package:wed_for_weddings/core/extensions/context_extension.dart';
 import 'package:wed_for_weddings/core/language/lang_keys.dart';
@@ -10,6 +11,7 @@ import 'package:wed_for_weddings/features/admin/dashboard/presentation/bloc/cate
 import 'package:wed_for_weddings/features/admin/dashboard/presentation/bloc/products_number/products_number_bloc.dart';
 import 'package:wed_for_weddings/features/admin/dashboard/presentation/bloc/users_number/users_number_bloc.dart';
 import 'package:wed_for_weddings/features/admin/dashboard/presentation/widgets/dashboard_container.dart';
+import 'package:wed_for_weddings/features/auth/presentation/widgets/dark_and_lang_buttons.dart';
 
 class DashboardBody extends StatelessWidget {
   const DashboardBody({super.key});
@@ -32,26 +34,37 @@ class DashboardBody extends StatelessWidget {
           },
           child: ListView(
             children: [
+              const DarkAndLangButtons(),
+              SizedBox(height: 20.h,),
               //Products
-             DashBoardContiner(
-              title: context.translate(LangKeys.Products,),
-               number: '0',
-                image: AppImages.productsDrawer,
-                 isLoading: false),
+             CustomFadeInRight(
+              duration: 600,
+               child: DashBoardContiner(
+                title: context.translate(LangKeys.Products,),
+                 number: '0',
+                  image: AppImages.productsDrawer,
+                   isLoading: false),
+             ),
                  SizedBox(height: 20.h,),
                     //Cateories
-             DashBoardContiner(
-              title: context.translate(LangKeys.Categories),
-               number: '0',
-                image: AppImages.categoriesDrawer,
-                 isLoading: false),
+             CustomFadeInLeft(
+              duration: 600,
+               child: DashBoardContiner(
+                title: context.translate(LangKeys.Categories),
+                 number: '0',
+                  image: AppImages.categoriesDrawer,
+                   isLoading: false),
+             ),
                  SizedBox(height: 20.h,),
                     //Users
-             DashBoardContiner(
-              title: context.translate(LangKeys.Users),
-               number: '0',
-                image: AppImages.usersDrawer,
-                 isLoading: false),
+             CustomFadeInRight(
+              duration: 600,
+               child: DashBoardContiner(
+                title: context.translate(LangKeys.Users),
+                 number: '0',
+                  image: AppImages.usersDrawer,
+                   isLoading: false),
+             ),
             ],
           )
           ),

@@ -18,6 +18,7 @@ class DashBoardScreen extends StatelessWidget {
           title: context.translate(LangKeys.DashBoard)),
       body: const Center(
         child: DashboardBody(),
+        
       ),
     );
   }
