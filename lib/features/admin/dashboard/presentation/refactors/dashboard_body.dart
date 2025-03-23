@@ -39,11 +39,14 @@ class DashboardBody extends StatelessWidget {
               builder: (context, state) {
                 return state.when(
                   loading: () {
-                    return  DashBoardContiner(
-                      image: AppImages.productsDrawer,
-                      number: '',
-                      title: context.translate(LangKeys.Products),
-                      isLoading: true,
+                    return  CustomFadeInRight(
+                      duration: 600,
+                      child: DashBoardContiner(
+                        image: AppImages.productsDrawer,
+                        number: '',
+                        title: context.translate(LangKeys.Products),
+                        isLoading: true,
+                      ),
                     );
                   },
                   success: (productNumber) {
