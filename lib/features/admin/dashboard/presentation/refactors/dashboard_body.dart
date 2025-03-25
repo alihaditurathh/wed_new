@@ -12,6 +12,7 @@ import 'package:wed_for_weddings/features/admin/dashboard/presentation/bloc/prod
 import 'package:wed_for_weddings/features/admin/dashboard/presentation/bloc/users_number/users_number_bloc.dart';
 import 'package:wed_for_weddings/features/admin/dashboard/presentation/widgets/dashboard_container.dart';
 
+
 class DashboardBody extends StatelessWidget {
   const DashboardBody({super.key});
 
@@ -38,11 +39,12 @@ class DashboardBody extends StatelessWidget {
               
               builder: (context, state) {
                 return state.when(
+                 
                   loading: () {
                     return  CustomFadeInRight(
                       duration: 600,
                       child: DashBoardContiner(
-                        image: AppImages.productsDrawer,
+                      image: AppImages.productsDrawer,
                         number: '',
                         title: context.translate(LangKeys.Products),
                         isLoading: true,

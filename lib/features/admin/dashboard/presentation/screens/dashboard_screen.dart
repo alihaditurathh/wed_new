@@ -31,7 +31,7 @@ class DashBoardScreen extends StatelessWidget {
         ),
       ],
       child: Scaffold(
-        backgroundColor: ColorsDark.mainColor,
+        backgroundColor: context.color.mainColor,
         appBar: AdminAppBar(
             isMain: true,
             backgroundColor: ColorsDark.mainColor,

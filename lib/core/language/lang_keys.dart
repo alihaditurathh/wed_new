@@ -38,7 +38,10 @@ class LangKeys {
   static const String phone = 'phone_number';
   static const String DashBoard = 'DashBoard';
   static const String notifications = 'notifications';
+   static const String GetAllCategories = 'GetAllCategories';
   static const String Categories = 'Categories';
+  static const String Add = 'add';
+   static const String name = 'name';
   static const String subscribedToNotifications = 'subscribed_to_notifications';
   static const String unsubscribedToNotifications =
       'unsubscribed_to_notifications';

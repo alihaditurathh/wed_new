@@ -57,6 +57,8 @@ dependencies:
   permission_handler: ^11.2.0
   shimmer: ^3.0.0
   flutter_zoom_drawer: ^3.2.0
+  timelines: ^0.1.0
+  cached_network_image: ^3.4.1
   # dart run build_runner build --delete-conflicting-outputs
 
 flutter_icons:

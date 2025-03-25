@@ -14,7 +14,7 @@ class DashBoardContiner extends StatelessWidget {
     required this.number,
     required this.image,
     required this.isLoading,
-    super.key,
+    super.key, Color? backgroundColor,
   });
 
   final String title;
